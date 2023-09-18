@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-image: url('https://imgs.search.brave.com/8TvG0u1Ar-7Z1sqswV_KUqzNyOAaDIHECWt7rJgwFNs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9oZWFydC1zaGFw/ZWQtZnJvbS1maWxt/LW5lZ2F0aXZlLW9s/ZC12aW50YWdlLWNh/bWVyYS1jb25jZXB0/LXBob3RvZ3JhcGh5/XzQ4ODIyMC04MzQ1/MC5qcGc_c2l6ZT02/MjYmZXh0PWpwZw'); /* Replace 'camera.jpg' with your actual background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: lightorange; /* Light orange background color */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin to ensure "Through My Lens" is at the top */
+        }
+
+        .top-title {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .registration-form {
+            background-color: rgba(35, 60, 101, 0.8);
+            padding: 45px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 58px;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background-color: rgb(201, 64, 85); /* Light pink button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .top-title{ text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0;
+    border: 3px solid black; /* Outline border style */
+    padding: 10px; /* Add padding for spacing */
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="top-title">Through My Lens</div>
+    <div class="container">
+        <div class="registration-form">
+            <h2>Registration</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="submit-button">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
