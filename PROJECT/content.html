@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photography Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=600https://imgs.search.brave.com/yUZSilp1OSUapzdh2JrWVYTVL26aVxDGHOVqvzacPis/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9vcmNo/aWRkaWdpdGFscy5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDcvTGVhdGhl/ci1UZXh0dXJlZC1Q/YXBlci5qcGc'); /* Replace with the path to your image */
+            background-size: cover; /* Adjust to your preference */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-position: center center;
+        }
+
+        .dashboard {
+            background-color: #c8835b; /* Light Orange */
+            width: 200px;
+            height: 83%;
+            position: fixed ;
+            top: 0;
+            left: 0;
+            padding: 20px;
+        }
+
+        .dashboard h1 {
+            font-size: 24px;
+            color: #891e35; 
+        }
+
+        .section {
+            margin: 10px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #1c5e50; 
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 5px;
+        }
+
+        .section li {
+            margin-bottom: 20px;}
+            .section img {
+            display: none;
+        }
+        
+    </style>
+     <script>
+        var imagesVisible = false;
+
+        function toggleImages() {
+            var images = document.querySelectorAll(".section img");
+            imagesVisible = !imagesVisible; // Toggle visibility state
+
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = imagesVisible ? "block" : "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>MIGHTY MAGIC</h1>
+
+        <div class="section">
+            <h1>Best Photos of Photography</h1>
+            <h2>Best of 2023 Pictures</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="toggleImages();">1ST CLICK</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleImages();">2ND CLICK</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleImages();">3RD CLICK</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleImages();">FINAL CLICK</a></li>
+            </ul>
+            <!-- Image elements with unique IDs -->
+            <img id="image1" src="https://imgs.search.brave.com/kSVmRe9LHgjqglGDP-mpJFWOfERpfrGdxt0VLxYw2bo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDg4/NDg2NzU2L3Bob3Rv/L2RldmlsLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz0yUTBa/cDlGZmp5MmdwdEFR/dUJjU25uQlhYc1o5/UGFxcjNVc2tpcmlo/SV93PQ" alt="Image 1">
+            <img id="image2" src="https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_640.jpg" alt="Image 2">
+            <img id="image3" src="https://example.com/image3.jpg" alt="Image 3">
+            <!-- Add more images as needed -->
+    </div>
+    
+    </div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Introduction to Photography</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .header {
+                background-color: #4671a9; /* Light Orange */
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .content {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+    
+            .image {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+            }
+            .section img {
+            display: none;
+        }
+        </style>
+         <script>
+            function toggleImages() {
+                var images = document.querySelectorAll(".section img");
+                for (var i = 0; i < images.length; i++) {
+                    if (images[i].style.display === "block") {
+                        images[i].style.display = "none"; // Hide images if they are currently visible
+                    } else {
+                        images[i].style.display = "block"; // Show images if they are currently hidden
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Introduction to Photography: The Universal Language</h1>
+        </div>
+        <div class="content">
+            <h2>What Is Photography?</h2>
+            <p>Photography is the art of capturing light with a camera, usually via a digital sensor or film, to create an image. With the right camera equipment, you can even photograph wavelengths of light invisible to the human eye, including UV, infrared, and radio.</p>
+    
+            <p>The first permanent photograph was captured in 1826 (some sources say 1827) by Joseph Nicéphore Niépce in France. It shows the roof of a building lit by the sun. You can see it reproduced below:</p>
+            
+    
+            <h2>A Brief History of Photography and the People Who Made It Succeed</h2>
+            <p>Color photography started to become popular and accessible with the release of Eastman Kodak’s “Kodachrome” film in the 1930s. Before that, almost all photos were monochromatic – although a handful of photographers, toeing the line between chemists and alchemists, had been using specialized techniques to capture color images for decades before. You’ll find some fascinating galleries of photos from the 1800s or early 1900s captured in full color, worth exploring if you have not seen them already.</p>
+    
+            <p>These scientist-magicians, the first color photographers, are hardly alone in pushing the boundaries of one of the world’s newest art forms. The history of photography has always been a history of people – artists and inventors who steered the field into the modern era.</p>
+    
+            <h2>Louis Daguerre</h2>
+            <p><strong>Invention:</strong> The Daguerreotype (first commercial photographic material)</p>
+            <p><strong>Where:</strong> France, 1839</p>
+            <p><strong>Impact:</strong> Daguerreotypes are images fixed directly to a heavily polished sheet of silver-plated copper. This invention is what really made photography a practical reality – although it was still just an expensive curiosity to many people at this point. The first time you see a daguerreotype in person, you may be surprised just how sharp it is.</p>
+            <p><strong>Quote:</strong> “I have seized the light. I have arrested its flight.”</p>
+    
+            <div class="image">
+                <img src="https://photographylife.com/wp-content/uploads/2018/12/Daguerreotype-of-Louis-Daguerre-750x960.jpg" width="200px" alt="Daguerreotype of Louis Daguerre">
+                <h2>STUFF I LIKED</h2>
+                <img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_640.jpg" alt="NATURE">
+                <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_640.jpg" alt="BEAUTY">
+<img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg" width="646px">
+     <img src="https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_640.jpg" >
+     <img src="https://imgs.search.brave.com/6BUW9_aD5f5q-C4KmVB-NY_dXqVf3chPb2Yk21Ag-wY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9waWt3/aXphcmQuY29tL3B3/L3NtYWxsLzgwYzA3/YjFjOGIxZDZiNmI3/NjljNWM5MmZiZjc3/ZDc4LmpwZw">
+    </div>
+        </div>
+    </body>
+    </html>
