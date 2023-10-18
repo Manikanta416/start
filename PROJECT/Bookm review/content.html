@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Dashboard</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+
+        }
+
+    .header {
+        background-image: url('https://imgs.search.brave.com/8zIyLH9FiQuajJwCawgIeCl1ufCgUtzfxOt0U_I473o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM4/ODM0ODc5MS9waG90/by9ibGFjay1zdG9u/ZS10ZXh0dXJlLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz0z/bVdYaFZsOVhnNFc4/aFZLRlVmanNOTkpl/US1BY044YnY5YWQ0/ZkdabzlFPQ');
+        color: #f3f2f2;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+
+        .header h1 {
+            
+        }
+
+        .container {
+            display: flex;
+            color: black;
+        }
+
+        .dashboard {
+            background-color: #c26f82;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .book-review {
+            display: none;
+        }
+
+        .dashboard-options {
+            display: flex;
+            flex-direction: column;
+            margin: 50px 0;
+        }
+
+        .dashboard-options button {
+            background-color: #7d1f06;
+            border: none;
+            color: #4fc923;
+            font-size: large;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .dashboard-options button:hover {
+            background-color: #891e35;
+            font-size: large;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 3% 5%;
+            z-index: 10;
+        }
+
+        .navbar_bookgeek {
+            padding-left: 90%;
+            width: 25px;
+            height: 50px;
+            padding-top: 0%;
+        }
+
+        .bookgeek_logo {
+            width: 200px;
+            height: 200px;
+            margin-right: 30px;
+        
+        }
+
+        .card-1,
+        .card-2,
+        .card-3,
+        .card-4,
+        .card-5,
+        .card-6,
+        .card-7,
+        .card-8,
+        .card-9 {
+            border-top: 20px solid rgb(69, 69, 69);
+            margin-left: 30%;
+        }
+
+        .style-cards {
+            overflow: hidden;
+        }
+
+        .img_god {
+            padding-left: 50%;
+        }
+
+        .desc-1 {
+            padding-left: 80px;
+            padding-right: 80%;
+            text-align: center;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        
+        <h1 style="color: aliceblue;">BOOK BAR</h1>
+        <marquee style="font-size: x-large; color: aqua;">A  PERFECT WORD CAN CHANGE YOUR WORLD</marquee>
+
+    </div>
+
+    <div class="container">
+        <div class="dashboard">
+            <h2 style="text-align: center;">WELCOME TO </h2>
+            <h2 style="text-align: center;">BOOK BAR</h2>
+            <h3 style="text-align: center;">DASHBOARD</h3>
+            <div class="dashboard-options">
+                <button id="book-review-button">Book Review</button>
+                
+                <button id="book-review-button">Genres</button>
+                <button id="book-review-button">Top Rated Books</button>
+                <button id="book-review-button">About</button>
+
+
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="book-review">
+                <h1 style="color: rgb(69, 148, 122);">Book Review</h1>
+                <p style="font-size: x-large; color: black;">Write your review here:</p>
+                <form id="review-form" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center;">
+                    <div style="margin-bottom: 20px; font-size: larger;">
+                        <label for="username">Your Name:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                
+                    <div style="margin-bottom: 20px;color: darkgreen;font-size: larger;">
+                        <label for="bookname">Book Name:</label>
+                        <input type="text" id="bookname" name="bookname" required>
+                    </div>
+                
+                    <div style="margin-bottom: 20px;font-size: larger;">
+                        <label for="user-review" style="color: black; font-size: large;">Your Review:</label>
+                        <textarea id="user-review" name="user-review" rows="4" columns="20" required></textarea>
+                    </div>
+                
+                    <div style="margin-top: 20px;">
+                        <button style="color: darkslategray;" type="submit">Submit Review</button>
+                    </div>
+                </form>
+                
+
+                <div class="user-reviews">
+                    <h2 style="color: rgb(121, 85, 219);">User Reviews</h2>
+                    <!-- User reviews will be displayed here dynamically using JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showBookReview() {
+            document.querySelector(".dashboard").style.display = "none";
+            document.querySelector(".book-review").style.display = "block";
+        }
+
+        // Add event listener to your button
+        const bookReviewButton = document.querySelector("#book-review-button");
+        bookReviewButton.addEventListener("click", showBookReview);
+
+        document.getElementById("review-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const userReview = document.getElementById("user-review").value;
+            const bookName = document.getElementById("bookname").value;
+
+
+
+            const userReviews = document.querySelector(".user-reviews");
+
+            const review = document.createElement("div");
+            review.innerHTML = `<p><strong>Name:</strong> ${username}</p><p><strong>Book Name:</strong> ${bookName}</p><p><strong>Review:</strong> ${userReview}</p><hr>`;
+
+            userReviews.appendChild(review);
+
+            // Clear the form
+            document.getElementById("username").value = "";
+            document.getElementById("user-review").value = "";
+            document.getElementById("bookname").value = "";
+
+            
+        });
+    </script>
+
+    <section class="style-cards">
+        <h3 style="color: rgb(52, 155, 57); text-align: center;">SOME OF BEST BOOKS</h3>    
+    <div class="card-2">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/10/A-God-Who-Hates-Women-Majid-Rafizadeh-Book-Review.jpg" alt="agod" class="img_agod">
+        <h1>A God Who Hates Women |<br> Majid Rafizadeh | <br>Book Review</h1>
+        <h4>BY SANKALPITA SINGH ON OCTOBER 10, <br>2023 IN BIOGRAPHY &<br> MEMOIR, BOOK REVIEWS, NON-FICTION</h4>
+        <p>In ‘A God Who Hates Women,’ set against the backdrop of the 1979 <br>Islamic revolution in Syria and Iran, author Dr. Majid Rafizadeh<br> delves into his mother Amira’s tumultuous life. Born into a society <br>that devalued girls, Amira’s journey unfolds with forced marriage,<br> abuse, and relentless struggle. It’s a gripping exploration of a family’s <br> resilience in the face of brutal patriarchy, offering a stark portrayal <br>of an era marked by ancient traditions and the relentless pursuit of <br>survival.</p>
+    </div>
+    <div class="card-3">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/10/The-Perfumist-of-Paris-by-Alka-Joshi-Book-Review.jpg">
+        <h1>The Perfumist of Paris | Alka Joshi |<br>Book Review</h1>
+        <h4>BY DR. NITISHA SHAH ON OCTOBER 9, 2023 IN BOOK REVIEWS,<br> FICTION, HISTORICAL FICTION BOOKS</h4>
+        <p>Delve into ‘The Perfumist of Paris,’ a captivating finale to the Jaipur <br>Trilogy. Radha, immersed in fragrances and love, navigates life’s <br>complexities, finding her true calling in the heart of Paris. Immerse <br>yourself in a journey of scents, family, and unexpected encounters, <br>as this spellbinding tale weaves India and Paris into an evocative <br>tapestry of emotions and empowerment.</p>
+    </div>
+    <div class="card-4">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/10/Madam-Nurse-Anuj-Tikku-Book-Review.jpg">
+        <h1>Madam Nurse | Anuj Tikku |<br> Book Review</h1>
+        <h4>BY SANKALPITA SINGH ON OCTOBER 4, 2023 IN BOOK REVIEWS,<br> FICTION, THRILLER & MYSTERY BOOKS</h4>
+        <p>In ‘Madam Nurse,’ the shadow of a sinister serial killer looms over <br>Ganga Shyam Hospital. Inspired by real events, this gripping mystery <br>unfolds as Nurse Lata Nair joins the ranks of dedicated healthcare <br>professionals. However, when a wave of infant deaths strikes, panic <br> ensues, and famed detective Suraj Kumar and his unorthodox <br>partner, Zen, are called in to unravel the chilling secrets concealed <br>within the hospital’s walls. Can they unmask the baby serial killer <br>before more lives are claimed?</p>
+    </div>
+    <div class="card-5">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/10/Madam-Nurse-Anuj-Tikku-Book-Review.jpg">
+        <h1>Madam Nurse | Anuj Tikku | Book Review</h1>
+        <h4>BY SANKALPITA SINGH ON OCTOBER 4, 2023 IN BOOK REVIEWS, FICTION, THRILLER & MYSTERY BOOKS</h4>
+        <p>In ‘Madam Nurse,’ the shadow of a sinister serial killer looms over <br>Ganga Shyam Hospital. Inspired by real events, this gripping mystery <br>unfolds as Nurse Lata Nair joins the ranks of dedicated healthcare <br>professionals. However, when a wave of infant deaths strikes, panic <br> ensues, and famed detective Suraj Kumar and his unorthodox <br>partner, Zen, are called in to unravel the chilling secrets concealed <br>within the hospital’s walls. Can they unmask the baby serial killer <br>before more lives are claimed?</p>
+    </div>
+    <div class="card-6">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/10/Unusual-Temples-of-India-Anuradha-Goyal-Book-Review.jpg">
+        <h1>Unusual Temples of India | Anuradha Goyal |<br> Book Review</h1>
+        <h4>BY SANKALPITA SINGH ON OCTOBER 3, 2023 IN BOOK <br>REVIEWS, NON-FICTION, RELIGION AND MYTHOLOGY BOOKS</h4>
+        <p>Explore India’s rich temple heritage, where spirituality thrives <br>amidst bustling cities, tranquil villages, and picturesque landscapes.<br> “Unusual Temples of India” unveils hidden gems that defy <br>convention. Join the author on her captivating journey across the<br> country as she delves into unique temples, offering a glimpse into <br>their extraordinary stories. This book is a compilation of her temple<br> travel diaries, a testament to the diversity and spirituality that define<br> India’s cultural mosaic.</p>
+    </div>
+    
+    <div class="card-7">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/09/Five-Survive-by-Holly-Jackson-Book-Review.jpg">
+        <h1>Five Survive | Holly Jackson | Book Review</h1>
+        <h4>BY ENRIDA LAKIANG LYNGDOH ON SEPTEMBER 28, 2023 <br> IN BOOK REVIEWS, FICTION, THRILLER & MYSTERY BOOKS,<br> YA BOOKS</h4>
+        <p>“In ‘Five Survive,’ six acquaintances set out on a 31-foot RV journey <br>from Philadelphia to Gulf Shores for Spring Break. When they lose <br>phone service and take a wrong turn, they become unwitting pawns <br>in a deadly game orchestrated by a hidden killer, facing an uncertain <br>fight for survival.”</p>
+    </div>
+    <div class="card-8">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/09/Poorly-Made-in-China-by-Paul-Midler-Book-Review.jpg">
+        <h1>Poorly Made in China | Paul Midler |<br> Book Review</h1>
+        <h4>BY SANKALPITA SINGH ON SEPTEMBER 27, 2023 IN BIOGRAPHY <br>& MEMOIR, BOOK REVIEWS, BUSINESS AND ECONOMICS, <br>NON-FICTION</h4>
+        <p>In “Poorly Made in China,” Paul Midler delves into the competitive world<br> of Chinese manufacturing, uncovering deceptive tactics and <br>cultural intricacies. Drawing from personal experiences, he provides <br>insights into the impact of these practices on global business, <br>offering a compelling exploration of this complex economic <br>landscape.</p>
+    </div>
+    <div class="card-9">
+        <img src="https://www.bookgeeks.in/wp-content/uploads/2023/09/Beach-Rivals-Georgie-Tilney-Book-Review.jpg">
+        <h1>Beach Rivals | Georgie Tilney | Book Review</h1>
+        <h4>BY SANKALPITA SINGH ON SEPTEMBER 26, 2023 IN BOOK REVIEWS,<br> CHICK-LIT BOOKS, FICTION, ROMANCE NOVELS</h4>
+        <p>“Beach Rivals” is a rollicking tale set in Bali, where Clare’s humdrum<br> life takes a wild turn with a gig as a bookseller. Enter Jack, her <br> infuriating roommate, sparking comedic clashes and undeniable<br> chemistry. Get ready for a rollercoaster of bickering and budding <br>romance in paradise!</p>
+    </div>
+    <div>
+        <h1 style="text-align: center; background-color: rgb(167, 85, 126); ">
+            THANK YOU FOR VISITING OUR WEBSITE!
+        </h1>
+        <div style="display: flex; align-items: center;">
+            <img src="https://img.freepik.com/premium-photo/close-up-blue-white-dragon-with-big-smile-generative-ai_925897-9097.jpg?w=740" style= "margin-left:30%;width:  500px; height: 100%; ">
+            <div style="text-align: right; color: darkred; margin-right: 30px;">
+                <h2 style="font-size: x-large; margin: 0;">Team Targaryen</h2>
+                <h2 style="font-size: x-large; margin: 0;">M.S.S.MANIKANTA SWAMY</h2>
+                <h2 style="font-size: x-large; margin: 0;">M.DEVI SRI PRASAD</h2>
+            </div>
+        </div>
+        
+   
+
+        <!-- Your card content here -->
+    </section>
+</body>
+</html>
